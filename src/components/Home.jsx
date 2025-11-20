@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
-import TrustedBrands from "./TrustedBrands";
-import Stats from "./Stats";
 import Services from "./Services";
-import Experience from "./Experience";
 import Portfolio from "./Portfolio";
 import HowItWorks from "./HowItWorks";
 import Testimonials from "./Testimonials";
 import Footer from "./Footer";
 
-// CTA Component inline to avoid import issues
+// CTA Component
 function CTA() {
   const handleScheduleClick = () => {
     window.location.href = "/contact";
@@ -25,13 +22,13 @@ function CTA() {
             <div className="absolute top-0 left-0 w-full h-1 bg-white/50 animate-slide-right"></div>
             <div className="absolute bottom-0 right-0 w-full h-1 bg-white/50 animate-slide-left"></div>
           </div>
+
           <div className="relative z-10 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl mb-8 text-white/90">
-              Let's discuss how we can help you achieve your digital marketing
-              goals
+              Let's discuss how we can help you achieve your digital goals
             </p>
             <button
               onClick={handleScheduleClick}
@@ -41,11 +38,66 @@ function CTA() {
               <div className="absolute inset-0 bg-cyan-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </button>
           </div>
+
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
           <div
             className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl animate-pulse"
             style={{ animationDelay: "1s" }}
           ></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Why Choose Us Section
+function WhyChooseUs() {
+  const reasons = [
+    {
+      icon: "⭐",
+      title: "Certified & Experienced Team",
+      desc: "Our team consists of certified experts with 5+ years of experience",
+    },
+    {
+      icon: "⚡",
+      title: "Fast Turnaround",
+      desc: "We deliver projects on time without compromising on quality",
+    },
+    {
+      icon: "💬",
+      title: "Transparent Communication",
+      desc: "Regular updates and clear communication throughout your project",
+    },
+    {
+      icon: "✓",
+      title: "100% Quality & Satisfaction",
+      desc: "We guarantee quality and your complete satisfaction",
+    },
+  ];
+
+  return (
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-cyan-400 font-semibold tracking-wider text-sm uppercase">Why Choose Us</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-6 mb-6">
+            Why Businesses Choose SMJ Solutions
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {reasons.map((reason, i) => (
+            <div
+              key={i}
+              className="text-center bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-8 hover:border-cyan-500/50 transition-all group"
+            >
+              <div className="text-5xl mb-4">{reason.icon}</div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">
+                {reason.title}
+              </h3>
+              <p className="text-slate-400 text-sm">{reason.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -67,7 +119,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
       {/* Animated Background Elements */}
-      <div className="fixed inset-0 pointer-events-none">
+      <div className="fixed inset-0 pointer-events-none z-0">
         <div
           className="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl transition-all duration-1000 ease-out"
           style={{
@@ -84,17 +136,18 @@ export default function Home() {
         />
       </div>
 
-      <Navbar />
-      <Hero />
-      <TrustedBrands />
-      <Stats />
-      <Services />
-      <Experience />
-      <Portfolio />
-      <HowItWorks />
-      <Testimonials />
-      <CTA />
-      <Footer />
+      {/* Content */}
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <Services />
+        <WhyChooseUs />
+        <Portfolio />
+        <HowItWorks />
+        <Testimonials />
+        <CTA />
+        <Footer />
+      </div>
     </div>
   );
 }

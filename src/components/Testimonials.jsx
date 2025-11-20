@@ -1,57 +1,64 @@
 import React, { useState, useEffect } from "react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Testimonials() {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesPerView, setSlidesPerView] = useState(3);
 
   const testimonials = [
     {
       name: "Sarah Thompson",
-      company: "THOMPSON & CO.",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80",
+      company: "E-Commerce Innovations",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80",
+      role: "CEO",
+      rating: 5,
       review:
-        "SMJ Solutions transformed our online presence! Their web development expertise and creative design elevated our brand, attracting more customers than ever before.",
+        "SMJ Solutions transformed our online presence completely. Their web development expertise and strategic approach helped us increase conversions by 245%. Highly recommended!",
     },
     {
       name: "Michael Chen",
-      company: "BRIGHT ELECTRONICS",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
+      company: "Tech Startup Co.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
+      role: "Founder",
+      rating: 5,
       review:
-        "Choosing SMJ Solutions for digital marketing was a game-changer. Our SEO ranking skyrocketed, leading to increased visibility and a significant boost in sales.",
-    },
-    {
-      name: "Ryan Miller",
-      company: "FRESH BITES CATERING",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
-      review:
-        "Data analysis by SMJ Solutions provided invaluable insights. Their expertise helped us make informed decisions, leading to remarkable business growth.",
+        "Working with SMJ Solutions was a game-changer for our startup. Their AI automation solutions streamlined our operations and saved us thousands monthly.",
     },
     {
       name: "Emily Rodriguez",
-      company: "URBAN STYLE BOUTIQUE",
-      image:
-        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&q=80",
+      company: "Digital Marketing Agency",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&q=80",
+      role: "Marketing Director",
+      rating: 5,
       review:
-        "The team at SMJ Solutions exceeded our expectations. Their social media strategy brought our brand to life and connected us with our target audience perfectly.",
+        "The digital marketing strategies from SMJ Solutions boosted our client acquisitions significantly. Their data-driven approach is unmatched in the industry.",
     },
     {
       name: "David Park",
-      company: "TECH INNOVATIONS LLC",
-      image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&q=80",
+      company: "Global Tech Solutions",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&q=80",
+      role: "CTO",
+      rating: 5,
       review:
-        "Outstanding results! SMJ Solutions helped us launch our startup with a comprehensive digital strategy that positioned us ahead of competitors from day one.",
+        "Excellent service from start to finish. The team at SMJ Solutions delivered our mobile app on time and with exceptional quality. True professionals!",
     },
     {
       name: "Jessica Williams",
-      company: "GREEN EARTH SOLUTIONS",
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&q=80",
+      company: "Creative Agency Plus",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&q=80",
+      role: "Creative Lead",
+      rating: 5,
       review:
-        "Working with SMJ Solutions was a game-changer for our sustainability brand. Their creative campaigns resonated with our values and amplified our message beautifully.",
+        "Their UI/UX design expertise brought our brand vision to life beautifully. The attention to detail and user experience is remarkable.",
+    },
+    {
+      name: "James Wilson",
+      company: "E-Learning Platform",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
+      role: "Product Manager",
+      rating: 5,
+      review:
+        "SMJ Solutions helped us build a scalable platform that handles thousands of users. Their technical expertise and support have been invaluable.",
     },
   ];
 
@@ -76,8 +83,8 @@ export default function Testimonials() {
   useEffect(() => {
     const maxSlides = Math.ceil(testimonials.length / slidesPerView);
     const timer = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % maxSlides);
-    }, 3000);
+      setCurrentIndex((prev) => (prev + 1) % maxSlides);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, [slidesPerView, testimonials.length]);
@@ -85,9 +92,17 @@ export default function Testimonials() {
   const maxSlides = Math.ceil(testimonials.length / slidesPerView);
   const translatePercentage = 100 / slidesPerView;
 
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + maxSlides) % maxSlides);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % maxSlides);
+  };
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950 relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
         <div
@@ -97,24 +112,25 @@ export default function Testimonials() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Header */}
         <div className="text-center mb-16 animate-slide-up">
-          <span className="text-cyan-400 font-semibold tracking-wider text-sm">
-            TESTIMONIAL
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Client Feedback & Reviews
+          <span className="text-cyan-400 font-semibold tracking-wider text-sm uppercase">TESTIMONIALS</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-6 mb-6">
+            What Our Clients Say
           </h2>
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+            Real feedback from businesses we've helped transform
+          </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
-          {/* Testimonials Container */}
+        {/* Testimonials Carousel */}
+        <div className="relative">
+          {/* Carousel Container */}
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-700 ease-out"
               style={{
-                transform: `translateX(-${
-                  currentTestimonial * translatePercentage
-                }%)`,
+                transform: `translateX(-${currentIndex * translatePercentage}%)`,
               }}
             >
               {testimonials.map((testimonial, i) => (
@@ -123,35 +139,43 @@ export default function Testimonials() {
                   className="flex-shrink-0 px-3"
                   style={{ width: `${translatePercentage}%` }}
                 >
-                  <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 sm:p-8 h-full transition-all duration-500 group hover:border-cyan-500/50 hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan-500/10">
-                    {/* Avatar */}
-                    <div className="flex justify-center mb-6">
-                      <div className="relative">
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-16 h-16 rounded-full object-cover border-2 border-slate-700 transition-all duration-300 group-hover:border-cyan-500/50 group-hover:scale-110"
+                  <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 h-full transition-all duration-500 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/10 relative overflow-hidden">
+                    {/* Decorative corner */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-bl-full"></div>
+
+                    {/* Stars */}
+                    <div className="flex items-center space-x-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, j) => (
+                        <Star
+                          key={j}
+                          className="w-5 h-5 fill-cyan-400 text-cyan-400"
                         />
-                        <div className="absolute -inset-2 rounded-full bg-cyan-500/10 scale-0 group-hover:scale-100 group-hover:animate-ping opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                      </div>
+                      ))}
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-slate-400 text-center mb-6 sm:mb-8 leading-relaxed text-sm transition-colors duration-300 group-hover:text-slate-300 min-h-[100px] sm:min-h-[120px]">
-                      {testimonial.review}
+                    <p className="text-slate-300 mb-6 leading-relaxed italic text-sm sm:text-base">
+                      "{testimonial.review}"
                     </p>
 
-                    {/* Name and Company */}
-                    <div className="text-center border-t border-slate-700/50 pt-4 transition-colors duration-300 group-hover:border-cyan-500/30">
-                      <h4 className="font-bold text-white mb-1 transition-colors duration-300 group-hover:text-cyan-400 text-sm sm:text-base">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-cyan-400 text-xs font-semibold italic opacity-80 transition-opacity duration-300 group-hover:opacity-100">
-                        {testimonial.company}
-                      </p>
+                    {/* Client Info */}
+                    <div className="flex items-center space-x-4 border-t border-slate-700/50 pt-6">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-12 h-12 rounded-full object-cover border-2 border-slate-700 group-hover:border-cyan-500/50 transition-all"
+                      />
+                      <div>
+                        <h4 className="font-bold text-white text-sm">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-cyan-400 text-xs font-semibold">
+                          {testimonial.role} • {testimonial.company}
+                        </p>
+                      </div>
                     </div>
 
-                    {/* Shine effect on hover */}
+                    {/* Shine effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-2xl pointer-events-none"></div>
                   </div>
                 </div>
@@ -159,28 +183,52 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Navigation Dots */}
-          <div className="flex justify-center items-center space-x-2 mt-8 sm:mt-12">
-            {Array.from({ length: maxSlides }).map((_, dotIndex) => (
-              <button
-                key={dotIndex}
-                onClick={() => setCurrentTestimonial(dotIndex)}
-                className={`transition-all duration-300 rounded-full transform hover:scale-125 ${
-                  currentTestimonial === dotIndex
-                    ? "w-3 h-3 bg-cyan-500 shadow-lg shadow-cyan-500/50"
-                    : "w-2 h-2 bg-slate-600 hover:bg-slate-500"
-                }`}
-                aria-label={`Go to slide ${dotIndex + 1}`}
-              />
-            ))}
-          </div>
+          {/* Navigation Buttons */}
+          <button
+            onClick={handlePrevious}
+            className="absolute -left-4 sm:left-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-slate-900/80 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all duration-300 group"
+          >
+            <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+          </button>
 
-          {/* Decorative animated lines */}
-          <div className="absolute -left-20 top-1/2 w-40 h-0.5 bg-gradient-to-r from-transparent to-cyan-500/20 animate-pulse hidden lg:block"></div>
-          <div
-            className="absolute -right-20 top-1/2 w-40 h-0.5 bg-gradient-to-l from-transparent to-cyan-500/20 animate-pulse hidden lg:block"
-            style={{ animationDelay: "0.5s" }}
-          ></div>
+          <button
+            onClick={handleNext}
+            className="absolute -right-4 sm:right-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-slate-900/80 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all duration-300 group"
+          >
+            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+
+        {/* Dots Navigation */}
+        <div className="flex justify-center items-center space-x-2 mt-12">
+          {Array.from({ length: maxSlides }).map((_, dotIndex) => (
+            <button
+              key={dotIndex}
+              onClick={() => setCurrentIndex(dotIndex)}
+              className={`transition-all duration-300 rounded-full transform hover:scale-125 ${
+                currentIndex === dotIndex
+                  ? "w-3 h-3 bg-cyan-500 shadow-lg shadow-cyan-500/50"
+                  : "w-2 h-2 bg-slate-600 hover:bg-slate-500"
+              }`}
+              aria-label={`Go to slide ${dotIndex + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Stats */}
+        <div className="grid md:grid-cols-3 gap-8 mt-20 pt-12 border-t border-slate-800">
+          {[
+            { number: "250+", label: "Projects Completed" },
+            { number: "98%", label: "Client Satisfaction" },
+            { number: "50+", label: "Happy Clients" },
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
+                {stat.number}
+              </div>
+              <div className="text-slate-400">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
