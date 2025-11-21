@@ -8,7 +8,8 @@ import {
   Palette, 
   Video,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Target
 } from "lucide-react";
 
 export default function Services() {
@@ -44,6 +45,27 @@ export default function Services() {
       features: ["SEO", "Social Media", "Paid Ads"]
     },
     {
+      icon: <Target className="w-8 h-8" />,
+      title: "ERP & SaaS Solutions",
+      desc: "Customized ERP and SaaS systems to manage operations from one platform.",
+      slug: "erp-saas",
+      features: ["Custom ERP", "SaaS Development", "CRM Systems"]
+    },
+    {
+      icon: <Video className="w-8 h-8" />,
+      title: "Creative & Media Production",
+      desc: "Branding, video production, and content creation that builds brand identity.",
+      slug: "media-production",
+      features: ["Video Production", "Branding", "Graphic Design"]
+    },
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "GHL Development",
+      desc: "GoHighLevel development, automation, and integration services for agencies.",
+      slug: "ghl-development",
+      features: ["GHL Setup", "Automations", "White-Label"]
+    },
+    {
       icon: <Palette className="w-8 h-8" />,
       title: "UI/UX Design",
       desc: "User-centered, modern, and intuitive designs that convert.",
@@ -51,12 +73,12 @@ export default function Services() {
       features: ["Wireframes", "Prototypes", "User Flow"]
     },
     {
-      icon: <Video className="w-8 h-8" />,
-      title: "Media & Video Production",
-      desc: "AI videos, marketing content, and brand storytelling solutions.",
-      slug: "media-production",
-      features: ["AI Videos", "Animations", "Reels"]
-    }
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "Marketing Consultation",
+      desc: "Data-driven marketing strategies for consistent business growth.",
+      slug: "marketing-consultation",
+      features: ["Strategy Planning", "Market Analysis", "Growth Plans"]
+    },
   ];
 
   const handleLearnMore = (slug) => {
@@ -78,7 +100,7 @@ export default function Services() {
           </p>
         </div>
 
-        {/* 6 Service Cards in Grid */}
+        {/* 9 Service Cards in Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {services.map((service, i) => (
             <div
@@ -160,7 +182,10 @@ export default function Services() {
                   </div>
                 </div>
               </div>
-              <button className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all">
+              <button 
+                onClick={() => handleLearnMore("web-development")}
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
+              >
                 View Full Services →
               </button>
             </div>
@@ -196,13 +221,16 @@ export default function Services() {
                   </div>
                 </div>
               </div>
-              <button className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all">
+              <button 
+                onClick={() => handleLearnMore("ai-automation")}
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
+              >
                 View Full Services →
               </button>
             </div>
             <div className="relative order-1 lg:order-2">
               <img
-                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80"
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80"
                 alt="AI Automation"
                 className="rounded-2xl shadow-xl shadow-cyan-500/20"
               />
@@ -246,7 +274,10 @@ export default function Services() {
                   </div>
                 </div>
               </div>
-              <button className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all">
+              <button 
+                onClick={() => handleLearnMore("digital-marketing")}
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
+              >
                 View Full Services →
               </button>
             </div>
