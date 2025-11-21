@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { ArrowRight, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import logo from '../assets/smj-logo.jpg'; // import your logo image
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -36,12 +37,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
 
           {/* Column 1: Company */}
-          <div className="space-y-6 animate-slide-up" onClick={() => handlePageClick('/')}>
-            <div className="flex items-center space-x-3 group cursor-pointer">
+          <div className="space-y-6 animate-slide-up cursor-pointer" onClick={() => handlePageClick('/')}>
+            <div className="flex items-center space-x-3 group">
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center font-bold text-xl transform group-hover:scale-110 transition-transform">
-                  S
-                </div>
+                <img src={logo} alt="SMJ Solutions Logo" className="w-12 h-12 object-contain" />
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg blur-lg opacity-0 group-hover:opacity-50 transition-opacity"></div>
               </div>
               <div>

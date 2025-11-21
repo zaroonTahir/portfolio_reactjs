@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import logo from "../assets/smj-logo.jpg"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,12 +93,7 @@ export default function Navbar() {
             }}
             className="flex items-center space-x-2 group hover:opacity-80 transition-opacity"
           >
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center font-bold text-xl transform group-hover:scale-110 transition-transform duration-300">
-                S
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-            </div>
+            <img src={logo} alt="SMJ Solutions Logo" className="w-10 h-10 object-contain" />
             <div className="flex flex-col">
               <span className="text-lg font-bold">SMJ Solutions</span>
               <span className="text-xs text-cyan-400">Digital Innovation</span>
@@ -125,8 +121,6 @@ export default function Navbar() {
               className="hidden sm:block relative bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-2.5 rounded-lg font-semibold text-white overflow-hidden group hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
             >
               <span className="relative z-10">Get Started</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute inset-0 bg-white/20 -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
             </button>
 
             {/* Mobile Menu Button */}
