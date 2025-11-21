@@ -142,13 +142,7 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 inline-flex items-center space-x-2 group">
-            <span>Start Your Project Today</span>
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
+        
       </div>
     </section>
   );
