@@ -66,13 +66,6 @@ export default function Services() {
       features: ["GHL Setup", "Automations", "White-Label"]
     },
     {
-      icon: <Palette className="w-8 h-8" />,
-      title: "UI/UX Design",
-      desc: "User-centered, modern, and intuitive designs that convert.",
-      slug: "ui-ux-design",
-      features: ["Wireframes", "Prototypes", "User Flow"]
-    },
-    {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Marketing Consultation",
       desc: "Data-driven marketing strategies for consistent business growth.",
