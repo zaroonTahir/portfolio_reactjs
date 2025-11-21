@@ -16,11 +16,13 @@ export default function Contact() {
 
   const services = [
     "Web Development",
-    "Mobile App Development",
-    "AI & Automation",
-    "Digital Marketing & SEO",
-    "UI/UX Design",
-    "Media & Video Production",
+    "Mobile Development",
+    "AI Automation",
+    "SEO & Digital Marketing",
+    "ERP & SaaS Solutions",
+    "Creative & Media Production",
+    "GHL Development & Integration",
+    "Marketing consultation and strategies",
     "Other",
   ];
 
