@@ -63,6 +63,11 @@ export default function Portfolio() {
     window.scrollTo(0, 0);
   };
 
+  const handleViewAllProjects = () => {
+    navigate("/portfolio");
+    window.scrollTo(0, 0);
+  };
+
   return (
     <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -135,7 +140,10 @@ export default function Portfolio() {
 
         {/* View All Projects Button */}
         <div className="text-center">
-          <button className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 inline-flex items-center space-x-2 group">
+          <button 
+            onClick={handleViewAllProjects}
+            className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 inline-flex items-center space-x-2 group cursor-pointer"
+          >
             <span>View All Projects</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>

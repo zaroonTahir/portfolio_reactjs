@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 import ServiceDetail from "./components/ServiceDetail";
 import PortfolioDetail from "./components/PortfolioDetail";
+import AllProjects from "./components/AllProjects";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services/:serviceSlug" element={<ServiceDetail />} />
+          <Route path="/portfolio" element={<AllProjects />} />
           <Route path="/portfolio/:projectSlug" element={<PortfolioDetail />} />
         </Routes>
 
