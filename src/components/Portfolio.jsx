@@ -6,76 +6,57 @@ export default function Portfolio() {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const categories = ["All", "Websites", "Mobile Apps", "AI", "Marketing", "Branding", "Video"];
+  const categories = ["All", "Websites", "Mobile Apps", "AI", "Automation", "Web Apps"];
 
   const portfolioItems = [
-    {
-      title: "E-commerce Revolution",
-      category: "Websites",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-      slug: "ecommerce-revolution",
-      color: "from-blue-600 to-cyan-500",
-    },
-    {
-      title: "Brand Transformation",
-      category: "Branding",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-      slug: "brand-transformation",
-      color: "from-cyan-600 to-blue-500",
-    },
-    {
-      title: "Social Campaign",
-      category: "Marketing",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
-      slug: "social-campaign",
-      color: "from-blue-500 to-indigo-600",
-    },
-    {
-      title: "Digital Strategy",
-      category: "AI",
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
-      slug: "digital-strategy",
-      color: "from-cyan-500 to-teal-600",
-    },
-    {
-      title: "Mobile App Suite",
-      category: "Mobile Apps",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
-      slug: "mobile-app-suite",
-      color: "from-purple-600 to-pink-500",
-    },
-    {
-      title: "Video Marketing",
-      category: "Video",
-      image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800&q=80",
-      slug: "video-marketing",
-      color: "from-red-600 to-orange-500",
-    },
-    {
-      title: "SaaS Platform",
-      category: "Websites",
-      image: "https://images.unsplash.com/photo-1556742212-5b321f3c261d?w=800&q=80",
-      slug: "saas-platform",
-      color: "from-green-600 to-teal-500",
-    },
-    {
-      title: "AI Analytics",
-      category: "AI",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-      slug: "ai-analytics",
-      color: "from-indigo-600 to-blue-500",
-    },
-    {
-      title: "Brand Identity Kit",
-      category: "Branding",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
-      slug: "brand-identity-kit",
-      color: "from-pink-600 to-red-500",
-    },
-  ];
+  {
+    title: "FixIt App",
+    category: "Mobile Apps",
+    image: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800",
+    slug: "fixit-app",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    title: "AI Blog Generator",
+    category: "AI",
+    image: "https://images.pexels.com/photos/5473951/pexels-photo-5473951.jpeg?auto=compress&cs=tinysrgb&w=800",
+    slug: "ai-blog-generator",
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    title: "Crypto Tracker",
+    category: "Websites",
+    image: "https://images.pexels.com/photos/730564/pexels-photo-730564.jpeg?auto=compress&cs=tinysrgb&w=800",
+    slug: "crypto-tracker",
+    color: "from-green-500 to-teal-500",
+  },
+  {
+    title: "Task Manager Pro",
+    category: "Web Apps",
+    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+    slug: "task-manager-pro",
+    color: "from-orange-500 to-yellow-500",
+  },
+  {
+    title: "GHL Funnel Booster",
+    category: "Automation",
+    image: "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800",
+    slug: "ghl-funnel-booster",
+    color: "from-red-500 to-pink-500",
+  },
+  {
+    title: "EduLearn LMS",
+    category: "Web Apps",
+    image: "https://images.pexels.com/photos/414518/pexels-photo-414518.jpeg?auto=compress&cs=tinysrgb&w=800",
+    slug: "edulearn-lms",
+    color: "from-indigo-500 to-blue-500",
+  },
+];
 
   const filteredItems =
-    activeFilter === "All" ? portfolioItems : portfolioItems.filter((item) => item.category === activeFilter);
+    activeFilter === "All"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === activeFilter);
 
   const handleViewProject = (slug) => {
     navigate(`/portfolio/${slug}`);

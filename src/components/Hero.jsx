@@ -61,14 +61,18 @@ export default function Hero() {
             </div>
 
             {/* Key Stats */}
-            <div className="grid grid-cols-2 gap-6 pt-6 border-t border-slate-800 max-w-xs mx-auto md:mx-0">
-              <div>
-                <div className="text-3xl font-bold text-cyan-400">50+</div>
-                <div className="text-sm text-slate-400">Projects Delivered</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-800 max-w-xl mx-auto md:mx-0">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-cyan-400">300+</div>
+                <div className="text-sm text-slate-400">Projects Completed</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-cyan-400">20+</div>
-                <div className="text-sm text-slate-400">International Clients</div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-cyan-400">50+</div>
+                <div className="text-sm text-slate-400">Team Members</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-cyan-400">7+</div>
+                <div className="text-sm text-slate-400">Years in Business</div>
               </div>
             </div>
           </div>

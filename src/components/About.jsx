@@ -41,7 +41,7 @@ export default function About() {
 
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-6 text-center hover:border-cyan-500/50 transition-all">
-                <div className="text-4xl font-bold text-cyan-400 mb-2">50+</div>
+                <div className="text-4xl font-bold text-cyan-400 mb-2">300+</div>
                 <div className="text-slate-400">Projects Delivered</div>
               </div>
               <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-6 text-center hover:border-cyan-500/50 transition-all">
@@ -53,7 +53,7 @@ export default function About() {
                 <div className="text-slate-400">Regional Offices</div>
               </div>
               <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-6 text-center hover:border-cyan-500/50 transition-all">
-                <div className="text-4xl font-bold text-cyan-400 mb-2">5+</div>
+                <div className="text-4xl font-bold text-cyan-400 mb-2">7+</div>
                 <div className="text-slate-400">Years of Experience</div>
               </div>
             </div>

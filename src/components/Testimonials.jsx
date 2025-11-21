@@ -7,71 +7,122 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: "Sarah Thompson",
-      company: "E-Commerce Innovations",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80",
-      role: "CEO",
+      name: "Emma W.",
+      company: "StyleHive",
+      project: "Social Media Marketing",
       rating: 5,
       review:
-        "SMJ Solutions transformed our online presence completely. Their web development expertise and strategic approach helped us increase conversions by 245%. Highly recommended!",
+        "Their team completely transformed our online presence. Leads are flowing in like never before.",
+      image:
+        "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150",
     },
     {
-      name: "Michael Chen",
-      company: "Tech Startup Co.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
-      role: "Founder",
-      rating: 5,
+      name: "Raj P.",
+      company: "TechSolutions",
+      project: "SEO & Content Marketing",
+      rating: 4,
       review:
-        "Working with SMJ Solutions was a game-changer for our startup. Their AI automation solutions streamlined our operations and saved us thousands monthly.",
+        "We trusted them with SEO, and now our website ranks on the first page for all major keywords.",
+      image:
+        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150",
     },
     {
-      name: "Emily Rodriguez",
-      company: "Digital Marketing Agency",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&q=80",
-      role: "Marketing Director",
+      name: "Sophia L.",
+      company: "Fresh Eats Co.",
+      project: "Paid Advertising / PPC",
       rating: 5,
       review:
-        "The digital marketing strategies from SMJ Solutions boosted our client acquisitions significantly. Their data-driven approach is unmatched in the industry.",
+        "PPC campaigns that actually convert! They know how to target the right audience.",
+      image:
+        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150",
     },
     {
-      name: "David Park",
-      company: "Global Tech Solutions",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&q=80",
-      role: "CTO",
+      name: "Arjun K.",
+      company: "Urban Threads",
+      project: "Branding & Creative",
       rating: 5,
       review:
-        "Excellent service from start to finish. The team at SMJ Solutions delivered our mobile app on time and with exceptional quality. True professionals!",
+        "Creative, professional, and attentive. They redesigned our brand beautifully.",
+      image:
+        "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=150",
     },
     {
-      name: "Jessica Williams",
-      company: "Creative Agency Plus",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&q=80",
-      role: "Creative Lead",
+      name: "Laura M.",
+      company: "HealthHub",
+      project: "Email Marketing",
       rating: 5,
       review:
-        "Their UI/UX design expertise brought our brand vision to life beautifully. The attention to detail and user experience is remarkable.",
+        "Our email open rates have improved dramatically thanks to their campaigns.",
+      image:
+        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150",
     },
     {
-      name: "James Wilson",
-      company: "E-Learning Platform",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
-      role: "Product Manager",
+      name: "David S.",
+      company: "EcoDrive",
+      project: "Website Design & Development",
+      rating: 4,
+      review:
+        "The website they built is stunning and user‑friendly. Bounce rates have dropped!",
+      image:
+        "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=150",
+    },
+    {
+      name: "Priya N.",
+      company: "FoodieApp",
+      project: "Full‑Service Digital Marketing",
       rating: 5,
       review:
-        "SMJ Solutions helped us build a scalable platform that handles thousands of users. Their technical expertise and support have been invaluable.",
+        "They handled everything SEO, social media, ads and the results speak for themselves.",
+      image:
+        "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150",
+    },
+    {
+      name: "Mark H.",
+      company: "Urban Garden Co.",
+      project: "Social Media & Content",
+      rating: 5,
+      review:
+        "Clear communication, timely updates, and creative strategies that actually work.",
+      image:
+        "https://images.pexels.com/photos/614907/pexels-photo-614907.jpeg?auto=compress&cs=tinysrgb&w=150",
+    },
+    {
+      name: "Ananya S.",
+      company: "Bloom Cosmetics",
+      project: "Social Media Marketing",
+      rating: 5,
+      review:
+        "Social media campaigns brought our brand to life. Engagement and growth exceeded expectations.",
+      image:
+        "https://images.pexels.com/photos/1181694/pexels-photo-1181694.jpeg?auto=compress&cs=tinysrgb&w=150",
+    },
+    {
+      name: "Jason R.",
+      company: "AutoPro Solutions",
+      project: "Paid Advertising / PPC",
+      rating: 4,
+      review:
+        "Highly professional team. Optimised our ad spend and increased ROI by 150% in three months!",
+      image:
+        "https://images.pexels.com/photos/1181700/pexels-photo-1181700.jpeg?auto=compress&cs=tinysrgb&w=150",
+    },
+    {
+      name: "Neha T.",
+      company: "Travelogue Co.",
+      project: "Content Marketing",
+      rating: 5,
+      review:
+        "They take time to understand our business. The content is relevant, high‑quality, and effective.",
+      image:
+        "https://images.pexels.com/photos/1181701/pexels-photo-1181701.jpeg?auto=compress&cs=tinysrgb&w=150",
     },
   ];
 
-  // Handle responsive slides per view
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setSlidesPerView(1);
-      } else if (window.innerWidth < 1024) {
-        setSlidesPerView(2);
-      } else {
-        setSlidesPerView(3);
-      }
+      if (window.innerWidth < 640) setSlidesPerView(1);
+      else if (window.innerWidth < 1024) setSlidesPerView(2);
+      else setSlidesPerView(3);
     };
 
     handleResize();
@@ -79,7 +130,6 @@ export default function Testimonials() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Auto-slide testimonials
   useEffect(() => {
     const maxSlides = Math.ceil(testimonials.length / slidesPerView);
     const timer = setInterval(() => {
@@ -95,26 +145,17 @@ export default function Testimonials() {
   const handlePrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + maxSlides) % maxSlides);
   };
-
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % maxSlides);
   };
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s" }}
-        ></div>
-      </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section Header */}
         <div className="text-center mb-16 animate-slide-up">
-          <span className="text-cyan-400 font-semibold tracking-wider text-sm uppercase">TESTIMONIALS</span>
+          <span className="text-cyan-400 font-semibold tracking-wider text-sm uppercase">
+            TESTIMONIALS
+          </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-6 mb-6">
             What Our Clients Say
           </h2>
@@ -123,59 +164,36 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Testimonials Carousel */}
         <div className="relative">
-          {/* Carousel Container */}
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-700 ease-out"
-              style={{
-                transform: `translateX(-${currentIndex * translatePercentage}%)`,
-              }}
+              style={{ transform: `translateX(-${currentIndex * translatePercentage}%)` }}
             >
-              {testimonials.map((testimonial, i) => (
-                <div
-                  key={i}
-                  className="flex-shrink-0 px-3"
-                  style={{ width: `${translatePercentage}%` }}
-                >
+              {testimonials.map((t, i) => (
+                <div key={i} className="flex-shrink-0 px-3" style={{ width: `${translatePercentage}%` }}>
                   <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 h-full transition-all duration-500 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/10 relative overflow-hidden">
-                    {/* Decorative corner */}
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-bl-full"></div>
-
-                    {/* Stars */}
                     <div className="flex items-center space-x-1 mb-4">
-                      {[...Array(testimonial.rating)].map((_, j) => (
-                        <Star
-                          key={j}
-                          className="w-5 h-5 fill-cyan-400 text-cyan-400"
-                        />
+                      {[...Array(t.rating)].map((_, j) => (
+                        <Star key={j} className="w-5 h-5 fill-cyan-400 text-cyan-400" />
                       ))}
                     </div>
-
-                    {/* Review Text */}
                     <p className="text-slate-300 mb-6 leading-relaxed italic text-sm sm:text-base">
-                      "{testimonial.review}"
+                      "{t.review}"
                     </p>
-
-                    {/* Client Info */}
                     <div className="flex items-center space-x-4 border-t border-slate-700/50 pt-6">
                       <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
+                        src={t.image}
+                        alt={t.name}
                         className="w-12 h-12 rounded-full object-cover border-2 border-slate-700 group-hover:border-cyan-500/50 transition-all"
                       />
                       <div>
-                        <h4 className="font-bold text-white text-sm">
-                          {testimonial.name}
-                        </h4>
+                        <h4 className="font-bold text-white text-sm">{t.name}</h4>
                         <p className="text-cyan-400 text-xs font-semibold">
-                          {testimonial.role} • {testimonial.company}
+                          {t.project} • {t.company}
                         </p>
                       </div>
                     </div>
-
-                    {/* Shine effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-2xl pointer-events-none"></div>
                   </div>
                 </div>
@@ -183,7 +201,6 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Navigation Buttons */}
           <button
             onClick={handlePrevious}
             className="absolute -left-4 sm:left-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-slate-900/80 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all duration-300 group"
@@ -199,7 +216,6 @@ export default function Testimonials() {
           </button>
         </div>
 
-        {/* Dots Navigation */}
         <div className="flex justify-center items-center space-x-2 mt-12">
           {Array.from({ length: maxSlides }).map((_, dotIndex) => (
             <button
@@ -212,22 +228,6 @@ export default function Testimonials() {
               }`}
               aria-label={`Go to slide ${dotIndex + 1}`}
             />
-          ))}
-        </div>
-
-        {/* Stats */}
-        <div className="grid md:grid-cols-3 gap-8 mt-20 pt-12 border-t border-slate-800">
-          {[
-            { number: "250+", label: "Projects Completed" },
-            { number: "98%", label: "Client Satisfaction" },
-            { number: "50+", label: "Happy Clients" },
-          ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
-                {stat.number}
-              </div>
-              <div className="text-slate-400">{stat.label}</div>
-            </div>
           ))}
         </div>
       </div>
