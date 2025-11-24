@@ -30,7 +30,7 @@ export default function CTA() {
 
             <button
               onClick={handleScheduleClick}
-              className=" group bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 relative overflow-hidden"
+              className=" group bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 relative overflow-hidden cursor-pointer"
             >
               <span className="relative z-10">Schedule a Consultation</span>
               {/* Animated background with pointer-events-none to allow cursor */}

@@ -154,7 +154,7 @@ export default function About() {
               </p>
               <button
                 onClick={() => (window.location.href = "/contact")}
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 cursor-pointer"
               >
                 Get In Touch
               </button>

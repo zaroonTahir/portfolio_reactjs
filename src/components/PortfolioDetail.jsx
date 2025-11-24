@@ -134,7 +134,7 @@ export default function PortfolioDetail() {
           {/* Back Button */}
           <button
             onClick={() => navigate("/")}
-            className="flex items-center space-x-2 text-slate-400 hover:text-cyan-400 transition-colors mb-8 group"
+            className="flex items-center space-x-2 text-slate-400 hover:text-cyan-400 transition-colors mb-8 group cursor-pointer"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span>Back to Portfolio</span>

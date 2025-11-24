@@ -691,7 +691,7 @@ export default function ServiceDetail() {
           <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
           <button
             onClick={() => navigate("/")}
-            className="bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 rounded-lg"
+            className="bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 rounded-lg cursor-pointer"
           >
             Back to Home
           </button>
@@ -705,7 +705,7 @@ export default function ServiceDetail() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden cursor-pointer">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-slate-950 to-blue-900/20"></div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-600/10 rounded-full blur-3xl animate-pulse"></div>
         <div
@@ -717,7 +717,7 @@ export default function ServiceDetail() {
           {/* Back Button */}
           <button
             onClick={() => navigate("/")}
-            className="flex items-center space-x-2 text-slate-400 hover:text-cyan-400 transition-colors mb-8 group"
+            className="flex items-center space-x-2 text-slate-400 hover:text-cyan-400 transition-colors mb-8 group cursor-pointer"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span>Back to Home</span>
@@ -737,7 +737,7 @@ export default function ServiceDetail() {
               </p>
               <button
                 onClick={() => navigate("/contact")}
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 flex items-center space-x-2 group"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 flex items-center space-x-2 group cursor-pointer"
               >
                 <span>Get Started Today</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -875,7 +875,7 @@ export default function ServiceDetail() {
               </p>
               <button
                 onClick={() => navigate("/contact")}
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 cursor-pointer"
               >
                 Schedule a Free Consultation
               </button>
