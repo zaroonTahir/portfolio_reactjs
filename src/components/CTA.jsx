@@ -11,7 +11,7 @@ export default function CTA() {
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 ">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center cursor-pointer">
         <div className="relative bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-12 overflow-hidden group">
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/20"></div>

@@ -77,7 +77,7 @@ function WhyChooseUs() {
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto cursor-pointer">
         <div className="text-center mb-16">
           <span className="text-cyan-400 font-semibold tracking-wider text-sm uppercase">Why Choose Us</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-6 mb-6">

@@ -4,6 +4,7 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesPerView, setSlidesPerView] = useState(3);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
 
   const testimonials = [
     {
@@ -54,7 +55,7 @@ export default function Testimonials() {
       review:
         "Our email open rates have improved dramatically thanks to their campaigns.",
       image:
-        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150",
+        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150",
     },
     {
       name: "David S.",
@@ -65,56 +66,6 @@ export default function Testimonials() {
         "The website they built is stunning and user‑friendly. Bounce rates have dropped!",
       image:
         "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=150",
-    },
-    {
-      name: "Priya N.",
-      company: "FoodieApp",
-      project: "Full‑Service Digital Marketing",
-      rating: 5,
-      review:
-        "They handled everything SEO, social media, ads and the results speak for themselves.",
-      image:
-        "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150",
-    },
-    {
-      name: "Mark H.",
-      company: "Urban Garden Co.",
-      project: "Social Media & Content",
-      rating: 5,
-      review:
-        "Clear communication, timely updates, and creative strategies that actually work.",
-      image:
-        "https://images.pexels.com/photos/614907/pexels-photo-614907.jpeg?auto=compress&cs=tinysrgb&w=150",
-    },
-    {
-      name: "Ananya S.",
-      company: "Bloom Cosmetics",
-      project: "Social Media Marketing",
-      rating: 5,
-      review:
-        "Social media campaigns brought our brand to life. Engagement and growth exceeded expectations.",
-      image:
-        "https://images.pexels.com/photos/1181694/pexels-photo-1181694.jpeg?auto=compress&cs=tinysrgb&w=150",
-    },
-    {
-      name: "Jason R.",
-      company: "AutoPro Solutions",
-      project: "Paid Advertising / PPC",
-      rating: 4,
-      review:
-        "Highly professional team. Optimised our ad spend and increased ROI by 150% in three months!",
-      image:
-        "https://images.pexels.com/photos/1181700/pexels-photo-1181700.jpeg?auto=compress&cs=tinysrgb&w=150",
-    },
-    {
-      name: "Neha T.",
-      company: "Travelogue Co.",
-      project: "Content Marketing",
-      rating: 5,
-      review:
-        "They take time to understand our business. The content is relevant, high‑quality, and effective.",
-      image:
-        "https://images.pexels.com/photos/1181701/pexels-photo-1181701.jpeg?auto=compress&cs=tinysrgb&w=150",
     },
   ];
 
@@ -131,106 +82,200 @@ export default function Testimonials() {
   }, []);
 
   useEffect(() => {
+    if (!isAutoPlay) return;
+
     const maxSlides = Math.ceil(testimonials.length / slidesPerView);
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % maxSlides);
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [slidesPerView, testimonials.length]);
+  }, [slidesPerView, isAutoPlay, testimonials.length]);
 
   const maxSlides = Math.ceil(testimonials.length / slidesPerView);
   const translatePercentage = 100 / slidesPerView;
 
   const handlePrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + maxSlides) % maxSlides);
+    setIsAutoPlay(false);
   };
+
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % maxSlides);
+    setIsAutoPlay(false);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+    setIsAutoPlay(false);
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950 relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950 relative overflow-hidden cursor-pointer">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16 animate-slide-up">
-          <span className="text-cyan-400 font-semibold tracking-wider text-sm uppercase">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <span className="text-cyan-400 font-semibold tracking-wider text-sm uppercase animate-slide-down">
             TESTIMONIALS
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-6 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mt-6 mb-6 animate-fade-in-up stagger-1">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto animate-fade-in-up stagger-2">
             Real feedback from businesses we've helped transform
           </p>
         </div>
 
-        <div className="relative">
-          <div className="overflow-hidden">
+        <div className="relative group" onMouseEnter={() => setIsAutoPlay(false)} onMouseLeave={() => setIsAutoPlay(true)}>
+          {/* Carousel Container */}
+          <div className="overflow-hidden rounded-2xl">
             <div
               className="flex transition-transform duration-700 ease-out"
               style={{ transform: `translateX(-${currentIndex * translatePercentage}%)` }}
             >
               {testimonials.map((t, i) => (
                 <div key={i} className="flex-shrink-0 px-3" style={{ width: `${translatePercentage}%` }}>
-                  <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 h-full transition-all duration-500 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/10 relative overflow-hidden">
-                    <div className="flex items-center space-x-1 mb-4">
-                      {[...Array(t.rating)].map((_, j) => (
-                        <Star key={j} className="w-5 h-5 fill-cyan-400 text-cyan-400" />
-                      ))}
-                    </div>
-                    <p className="text-slate-300 mb-6 leading-relaxed italic text-sm sm:text-base">
-                      "{t.review}"
-                    </p>
-                    <div className="flex items-center space-x-4 border-t border-slate-700/50 pt-6">
-                      <img
-                        src={t.image}
-                        alt={t.name}
-                        className="w-12 h-12 rounded-full object-cover border-2 border-slate-700 group-hover:border-cyan-500/50 transition-all"
-                      />
-                      <div>
-                        <h4 className="font-bold text-white text-sm">{t.name}</h4>
-                        <p className="text-cyan-400 text-xs font-semibold">
-                          {t.project} • {t.company}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-2xl pointer-events-none"></div>
-                  </div>
+                  <TestimonialCard testimonial={t} index={i} />
                 </div>
               ))}
             </div>
           </div>
 
+          {/* Navigation Buttons */}
           <button
             onClick={handlePrevious}
-            className="absolute -left-4 sm:left-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-slate-900/80 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all duration-300 group"
+            className="absolute -left-4 sm:left-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-slate-900/80 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all duration-300 group/btn hover:scale-110 active:scale-95"
           >
-            <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            <ChevronLeft className="w-5 h-5 group-hover/btn:-translate-x-1 transition-transform" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute -right-4 sm:right-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-slate-900/80 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all duration-300 group"
+            className="absolute -right-4 sm:right-0 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-slate-900/80 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all duration-300 group/btn hover:scale-110 active:scale-95"
           >
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
           </button>
         </div>
 
+        {/* Indicator Dots */}
         <div className="flex justify-center items-center space-x-2 mt-12">
           {Array.from({ length: maxSlides }).map((_, dotIndex) => (
             <button
               key={dotIndex}
-              onClick={() => setCurrentIndex(dotIndex)}
-              className={`transition-all duration-300 rounded-full transform hover:scale-125 ${
-                currentIndex === dotIndex
-                  ? "w-3 h-3 bg-cyan-500 shadow-lg shadow-cyan-500/50"
-                  : "w-2 h-2 bg-slate-600 hover:bg-slate-500"
-              }`}
+              onClick={() => goToSlide(dotIndex)}
+              className="transition-all duration-300 rounded-full transform hover:scale-125 outline-none focus:outline-none"
+              style={{
+                width: currentIndex === dotIndex ? '12px' : '8px',
+                height: currentIndex === dotIndex ? '12px' : '8px',
+                background: currentIndex === dotIndex 
+                  ? 'linear-gradient(135deg, #06b6d4, #3b82f6)'
+                  : '#475569',
+                boxShadow: currentIndex === dotIndex
+                  ? '0 0 15px rgba(34, 211, 238, 0.5)'
+                  : 'none'
+              }}
               aria-label={`Go to slide ${dotIndex + 1}`}
             />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+/**
+ * Testimonial Card Component with Smooth Animations
+ */
+function TestimonialCard({ testimonial, index }) {
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  return (
+    <div
+      className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 h-full transition-all duration-500 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/10 relative overflow-hidden transform"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        transform: isHovered ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)',
+        transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+      }}
+    >
+      {/* Star Rating */}
+      <div className="flex items-center space-x-1 mb-4 transform transition-all duration-500"
+        style={{
+          transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+          transformOrigin: 'left'
+        }}
+      >
+        {[...Array(testimonial.rating)].map((_, j) => (
+          <Star 
+            key={j} 
+            className="w-5 h-5 fill-cyan-400 text-cyan-400 transition-all duration-300"
+            style={{
+              animation: isHovered ? `bounce ${0.5 + j * 0.1}s ease-in-out` : 'none'
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Review Text */}
+      <p
+        className="text-slate-300 mb-6 leading-relaxed italic text-sm sm:text-base transition-all duration-500 min-h-20"
+        style={{
+          color: isHovered ? '#e0e7ff' : '#cbd5e1'
+        }}
+      >
+        "{testimonial.review}"
+      </p>
+
+      {/* Divider */}
+      <div
+        className="border-t border-slate-700/50 pt-6 transition-all duration-500"
+        style={{
+          borderColor: isHovered ? 'rgba(34, 211, 238, 0.3)' : 'rgba(51, 65, 85, 0.5)'
+        }}
+      ></div>
+
+      {/* Author Info */}
+      <div className="flex items-center space-x-4 mt-6">
+        <img
+          src={testimonial.image}
+          alt={testimonial.name}
+          className="w-12 h-12 rounded-full object-cover border-2 border-slate-700 group-hover:border-cyan-500/50 transition-all duration-500 transform group-hover:scale-110"
+        />
+        <div className="transform transition-all duration-500"
+          style={{
+            transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
+          }}
+        >
+          <h4 className="font-bold text-white text-sm transition-colors duration-500"
+            style={{
+              color: isHovered ? '#22d3ee' : '#ffffff'
+            }}
+          >
+            {testimonial.name}
+          </h4>
+          <p className="text-cyan-400 text-xs font-semibold transition-colors duration-500">
+            {testimonial.project} • {testimonial.company}
+          </p>
+        </div>
+      </div>
+
+      {/* Animated shine effect */}
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent pointer-events-none rounded-2xl"
+        style={{
+          transform: isHovered ? 'translateX(200%)' : 'translateX(-200%)',
+          transition: 'transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        }}
+      ></div>
+
+      {/* Glow effect on hover */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-cyan-500/10 to-transparent rounded-2xl pointer-events-none"
+        style={{
+          opacity: isHovered ? 0.5 : 0,
+          transition: 'opacity 0.5s ease-out'
+        }}
+      ></div>
+    </div>
   );
 }

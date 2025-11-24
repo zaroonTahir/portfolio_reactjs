@@ -211,7 +211,7 @@ export default function AllProjects() {
                   <p className="text-sm text-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     {item.description}
                   </p>
-                  <button className="flex items-center space-x-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 text-white hover:text-cyan-300">
+                  <button className="flex items-center space-x-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 text-white hover:text-cyan-300 cursor-pointer">
                     <span>View Details</span>
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
                   </button>
