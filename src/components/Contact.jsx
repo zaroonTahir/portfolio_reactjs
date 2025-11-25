@@ -31,45 +31,42 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      icon: <MapPin className="w-6 h-6" />,
-      title: "Visit Us",
-      lines: [
-        // Pakistan
-        <span className="flex items-center gap-2" key="pak">
-          <img
-            src="/flags/pakistan.png"
-            className="w-6 h-4 object-cover rounded-sm border border-slate-700"
-            alt="Pakistan Flag"
-          />
-          Islamabad, Pakistan
-        </span>,
+    icon: <MapPin className="w-10 h-10 text-cyan-400" />,
+    title: "Visit Us",
+    lines: [
+      <span className="flex items-center gap-3" key="pak">
+        <img
+          src="/flags/pakistan.png"
+          className="w-8 h-5 object-cover rounded-sm border border-slate-700"
+          alt="Pakistan Flag"
+        />
+        commerical 20, khawaja banglows, RYK. PAKISTAN
+      </span>,
 
-        // Dubai
-        <span className="flex items-center gap-2" key="dubai">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg"
-            className="w-6 h-4 object-cover rounded-sm border border-slate-700"
-            alt="UAE Flag"
-          />
-          Dubai, United Arab Emirates
-        </span>,
+      <span className="flex items-center gap-3" key="dubai">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg"
+          className="w-8 h-5 object-cover rounded-sm border border-slate-700"
+          alt="UAE Flag"
+        />
+        Khalidiyah Towers, Block A, Abu Dhabi, UAE
+      </span>,
 
-        // Qatar
-        <span className="flex items-center gap-2" key="qatar">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg"
-            className="w-6 h-4 object-cover rounded-sm border border-slate-700"
-            alt="Qatar Flag"
-          />
-          Doha, Qatar
-        </span>,
-      ],
-    },
+      <span className="flex items-center gap-3" key="qatar">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg"
+          className="w-8 h-5 object-cover rounded-sm border border-slate-700"
+          alt="Qatar Flag"
+        />
+        Doha, Qatar
+      </span>,
+    ],
+  },
 
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      lines: ["+92 XXXX XXX XXX", "+971 50 XXX XXXX", "+974 55X XXX XX"],
+      lines: ["+971 50 276 9285"],
     },
 
     {
@@ -343,7 +340,7 @@ export default function Contact() {
             <div className="space-y-6">
               <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden h-96">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.8866780015043!2d73.23160272344387!3d33.74127857327503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd07891c72f%3A0x6309506f06b1b8f0!2sIslamabad%2C%20Pakistan!5e0!3m2!1sen!2s!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7262.627574560619!2d54.34315113698677!3d24.47458232757181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e679abac68ee5%3A0xcd3792e05e9592ca!2sKhalidiya%20Tower!5e0!3m2!1sen!2s!4v1764067181155!5m2!1sen!2s"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

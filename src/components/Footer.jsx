@@ -41,7 +41,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3 group">
               <div className="relative">
                 <img src={logo} alt="SMJ Solutions Logo" className="w-12 h-12 object-contain" />
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg blur-lg opacity-0 group-hover:opacity-50 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg blur-lg opacity-0 group-hover:opacity-15 transition-opacity"></div>
               </div>
               <div>
                 <span className="text-xl font-bold block">SMJ Solutions</span>
