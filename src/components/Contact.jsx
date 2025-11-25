@@ -10,6 +10,9 @@ export default function Contact() {
     phone: "",
     service: "",
     message: "",
+    contactMethod: "",
+    budget: "",
+    agree: false,
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -30,18 +33,51 @@ export default function Contact() {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Visit Us",
-      lines: ["Islamabad, Pakistan"],
+      lines: [
+        // Pakistan
+        <span className="flex items-center gap-2" key="pak">
+          <img
+            src="/flags/pakistan.png"
+            className="w-6 h-4 object-cover rounded-sm border border-slate-700"
+            alt="Pakistan Flag"
+          />
+          Islamabad, Pakistan
+        </span>,
+
+        // Dubai
+        <span className="flex items-center gap-2" key="dubai">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg"
+            className="w-6 h-4 object-cover rounded-sm border border-slate-700"
+            alt="UAE Flag"
+          />
+          Dubai, United Arab Emirates
+        </span>,
+
+        // Qatar
+        <span className="flex items-center gap-2" key="qatar">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg"
+            className="w-6 h-4 object-cover rounded-sm border border-slate-700"
+            alt="Qatar Flag"
+          />
+          Doha, Qatar
+        </span>,
+      ],
     },
+
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      lines: ["+92 XXXX XXX XXX"],
+      lines: ["+92 XXXX XXX XXX", "+971 50 XXX XXXX", "+974 55X XXX XX"],
     },
+
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
       lines: ["info@smjsols.com", "support@smjsols.com"],
     },
+
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Working Hours",
@@ -50,14 +86,34 @@ export default function Contact() {
   ];
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!formData.agree) {
+      alert("You must agree to the terms before submitting.");
+      return;
+    }
+
     setSubmitted(true);
+
     setTimeout(() => {
-      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+        contactMethod: "",
+        budget: "",
+        agree: false,
+      });
       setSubmitted(false);
     }, 3000);
   };
@@ -73,7 +129,9 @@ export default function Contact() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
 
         <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <span className="text-cyan-400 font-semibold tracking-wider text-sm">GET IN TOUCH</span>
+          <span className="text-cyan-400 font-semibold tracking-wider text-sm">
+            GET IN TOUCH
+          </span>
           <h1 className="text-5xl md:text-7xl font-bold mt-4 mb-6">
             Let's Start a Conversation
           </h1>
@@ -88,33 +146,49 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {contactInfo.map((item, i) => (
-              <div key={i} className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+              <div
+                key={i}
+                className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all group"
+              >
                 <div className="w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-lg flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold mb-3 group-hover:text-cyan-400 transition-colors">{item.title}</h3>
+
+                <h3 className="text-lg font-bold mb-3 group-hover:text-cyan-400 transition-colors">
+                  {item.title}
+                </h3>
+
                 {item.lines.map((line, j) => (
-                  <p key={j} className="text-slate-400 text-sm">{line}</p>
+                  <p key={j} className="text-slate-400 text-sm">
+                    {line}
+                  </p>
                 ))}
               </div>
             ))}
           </div>
 
-          {/* Form and Map Section */}
+          {/* Form + Map Section */}
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8">
               <h2 className="text-3xl font-bold mb-6">Send Us a Message</h2>
+
               {submitted && (
                 <div className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-green-300">Message sent successfully! We'll get back to you soon.</span>
+                  <span className="text-green-300">
+                    Message sent successfully! We'll get back to you soon.
+                  </span>
                 </div>
               )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name + Email */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-slate-300">Name *</label>
+                    <label className="block text-sm font-medium mb-2 text-slate-300">
+                      Name *
+                    </label>
                     <input
                       type="text"
                       name="name"
@@ -122,11 +196,14 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="John Doe"
-                      className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors text-white placeholder-slate-500"
+                      className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 text-white"
                     />
                   </div>
+
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-slate-300">Email *</label>
+                    <label className="block text-sm font-medium mb-2 text-slate-300">
+                      Email *
+                    </label>
                     <input
                       type="email"
                       name="email"
@@ -134,42 +211,112 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="john@example.com"
-                      className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors text-white placeholder-slate-500"
+                      className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 text-white"
                     />
                   </div>
                 </div>
 
+                {/* Phone + Service */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-slate-300">Phone</label>
+                    <label className="block text-sm font-medium mb-2 text-slate-300">
+                      Phone
+                    </label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+92 XXXX XXX XXX"
-                      className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors text-white placeholder-slate-500"
+                      className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 text-white"
                     />
                   </div>
+
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-slate-300">Service *</label>
+                    <label className="block text-sm font-medium mb-2 text-slate-300">
+                      Project *
+                    </label>
                     <select
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors text-white"
+                      className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 text-white"
                     >
-                      <option value="">Select a service</option>
+                      <option value="">Select a project</option>
                       {services.map((service, i) => (
-                        <option key={i} value={service}>{service}</option>
+                        <option key={i} value={service}>
+                          {service}
+                        </option>
                       ))}
                     </select>
                   </div>
                 </div>
 
+                {/* Contact Method */}
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-slate-300">Message *</label>
+                  <label className="block text-sm font-medium mb-2 text-slate-300">
+                    How Should We Contact You?
+                  </label>
+                  <select
+                    name="contactMethod"
+                    value={formData.contactMethod}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 text-white"
+                  >
+                    <option value="">Choose an option</option>
+                    <option>Email</option>
+                    <option>Phone</option>
+                    <option>SMS</option>
+                    <option>WhatsApp</option>
+                  </select>
+                </div>
+
+                {/* Budget */}
+                <div>
+                  <label className="block text-sm font-medium mb-2 text-slate-300">
+                    Project Budget
+                  </label>
+                  <select
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 text-white"
+                  >
+                    <option value="">Select budget</option>
+                    <option>$100–500</option>
+                    <option>$500–1,000</option>
+                    <option>$1,000–5,000</option>
+                    <option>$5,000+</option>
+                  </select>
+                </div>
+
+                {/* Agreement */}
+                <div className="flex items-start space-x-3">
+                  <input
+                    type="checkbox"
+                    name="agree"
+                    checked={formData.agree}
+                    onChange={handleChange}
+                    required
+                    className="w-5 h-5 accent-cyan-500 cursor-pointer"
+                  />
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    I agree to the{" "}
+                    <span className="text-cyan-400">Privacy Policy</span> and{" "}
+                    <span className="text-cyan-400">Terms & Conditions.</span>{" "}
+                    I agree to receive SMS, email, and phone updates regarding
+                    services and promotions.
+                  </p>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-sm font-medium mb-2 text-slate-300">
+                    Message *
+                  </label>
                   <textarea
                     name="message"
                     value={formData.message}
@@ -177,10 +324,11 @@ export default function Contact() {
                     required
                     rows="6"
                     placeholder="Tell us about your project..."
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors text-white placeholder-slate-500 resize-none"
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 text-white resize-none"
                   ></textarea>
                 </div>
 
+                {/* Submit Button */}
                 <button
                   type="submit"
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 flex items-center justify-center space-x-2 group cursor-pointer"
@@ -191,7 +339,7 @@ export default function Contact() {
               </form>
             </div>
 
-            {/* Info & Map */}
+            {/* Map & Why Choose Us */}
             <div className="space-y-6">
               <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden h-96">
                 <iframe
@@ -208,6 +356,7 @@ export default function Contact() {
 
               <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold mb-6">Why Choose Us?</h3>
+
                 <ul className="space-y-4">
                   {[
                     "Fast response time within 24 hours",
@@ -233,11 +382,16 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="relative bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-12 overflow-hidden">
             <div className="absolute inset-0 bg-black/20"></div>
+
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Ready to Get Started?
+              </h2>
               <p className="text-xl mb-8 text-white/90">
-                Let's bring your vision to life with our expert digital solutions
+                Let's bring your vision to life with our expert digital
+                solutions
               </p>
+
               <a
                 href="tel:+92XXXXXXXXX"
                 className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300"
