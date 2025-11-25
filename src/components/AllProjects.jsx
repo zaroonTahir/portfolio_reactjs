@@ -84,12 +84,12 @@ export default function AllProjects() {
       description: "Mobile fitness tracking and workout app",
     },
     {
-      title: "Social Media Dashboard",
-      category: "Web Apps",
+      title: "Unique Engineering",
+      category: "Website",
       image: "https://images.pexels.com/photos/3945651/pexels-photo-3945651.jpeg?auto=compress&cs=tinysrgb&w=800",
-      slug: "social-dashboard",
+      slug: "unique-engineering",
       color: "from-pink-500 to-rose-500",
-      description: "Unified social media management platform",
+      description: "Engineering for a Sustainable Future",
     },
     {
       title: "Workflow Automation Engine",

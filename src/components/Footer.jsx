@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import logo from '../assets/smj-logo.jpg'; // import your logo image
+import logo from '../assets/smj-logo.png'; // import your logo image
 
 export default function Footer() {
   const navigate = useNavigate();
