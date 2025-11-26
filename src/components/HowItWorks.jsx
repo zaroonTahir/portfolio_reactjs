@@ -174,14 +174,7 @@ function ProcessStep({ step, index, isVisible, totalSteps }) {
         </p>
 
         {/* Arrow Indicator */}
-        <div className="flex items-center text-cyan-400 font-semibold text-sm transform transition-all duration-500"
-          style={{
-            transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
-          }}
-        >
-          <span>Learn More</span>
-          <ChevronRight className="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1" />
-        </div>
+       
 
         {/* Hover Effect Border */}
         <div
