@@ -119,7 +119,7 @@ function ProcessStep({ step, index, isVisible, totalSteps }) {
 
   return (
     <div
-      className="group relative cursor-pointer"
+      className="group relative "
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
@@ -208,7 +208,7 @@ function BenefitCard({ benefit, index, isVisible }) {
 
   return (
     <div
-      className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-500 group cursor-pointer transform hover:scale-105"
+      className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-500 group  transform hover:scale-105"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{

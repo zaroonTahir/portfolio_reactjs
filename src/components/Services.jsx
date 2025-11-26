@@ -178,7 +178,7 @@ export default function Services() {
 function ServiceCard({ service, index, isVisible, onLearnMore }) {
   return (
     <div
-      className="group bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 cursor-pointer"
+      className="group bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 "
       style={{
         animation: isVisible ? `fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards` : 'none',
         animationDelay: `${index * 0.1}s`,
@@ -262,7 +262,7 @@ function FeaturedServiceRow({
 
   const content = (
     <div 
-      className="space-y-6 cursor-pointer"
+      className="space-y-6 "
       style={{
         animation: isVisible ? `fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards` : 'none',
         opacity: isVisible ? 1 : 0

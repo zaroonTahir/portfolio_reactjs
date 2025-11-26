@@ -111,7 +111,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950 relative overflow-hidden cursor-pointer">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950 relative overflow-hidden ">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
           <span className="text-cyan-400 font-semibold tracking-wider text-sm uppercase animate-slide-down">

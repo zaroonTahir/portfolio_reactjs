@@ -696,7 +696,7 @@ export default function ServiceDetail() {
             onClick={() => navigate("/")}
             className="bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 rounded-lg cursor-pointer"
           >
-            Back to Home
+            Back to Home  
           </button>
         </div>
       </div>
@@ -708,7 +708,7 @@ export default function ServiceDetail() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden cursor-pointer">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden ">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-slate-950 to-blue-900/20"></div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-600/10 rounded-full blur-3xl animate-pulse"></div>
         <div

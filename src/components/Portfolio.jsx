@@ -76,7 +76,7 @@ export default function Portfolio() {
 
   return (
     <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto cursor-pointer">
+      <div className="max-w-7xl mx-auto ">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <span className="text-cyan-400 font-semibold tracking-wider text-sm uppercase animate-slide-down">
@@ -202,7 +202,7 @@ function PortfolioCard({ item, index, isVisible, onViewProject }) {
 
         {/* Button */}
         <button
-          className="flex items-center space-x-2 text-sm font-semibold transition-all duration-500 delay-100 text-white hover:text-cyan-300"
+          className="flex cursor-pointer items-center space-x-2 text-sm font-semibold transition-all duration-500 delay-100 text-white hover:text-cyan-300"
           style={{
             opacity: isHovered ? 1 : 0,
             transform: isHovered ? 'translateY(0)' : 'translateY(10px)',

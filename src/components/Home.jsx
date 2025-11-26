@@ -32,7 +32,7 @@ function CTA() {
             </p>
             <button
               onClick={handleScheduleClick}
-              className="group bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 relative overflow-hidden"
+              className="group bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 relative overflow-hidden cursor-pointer"
             >
               <span className="relative z-10">Schedule a Consultation</span>
               <div className="absolute inset-0 bg-cyan-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
@@ -77,7 +77,7 @@ function WhyChooseUs() {
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
-      <div className="max-w-7xl mx-auto cursor-pointer">
+      <div className="max-w-7xl mx-auto ">
         <div className="text-center mb-16">
           <span className="text-cyan-400 font-semibold tracking-wider text-sm uppercase">Why Choose Us</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-6 mb-6">
