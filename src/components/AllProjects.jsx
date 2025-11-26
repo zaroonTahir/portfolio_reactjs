@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import fixit from "../assets/fixit.jpg"
+import blog from "../assets/aiblog.png"
+import un from "../assets/un.png"
+import lms from "../assets/lms.jpg"
 
 export default function AllProjects() {
   const navigate = useNavigate();
@@ -14,7 +18,7 @@ export default function AllProjects() {
     {
       title: "FixIt App",
       category: "Mobile Apps",
-      image: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: fixit,
       slug: "fixit-app",
       color: "from-blue-500 to-cyan-500",
       description: "Mobile-first repair platform with real-time tracking",
@@ -22,7 +26,7 @@ export default function AllProjects() {
     {
       title: "AI Blog Generator",
       category: "AI",
-      image: "https://images.pexels.com/photos/5473951/pexels-photo-5473951.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: blog,
       slug: "ai-blog-generator",
       color: "from-purple-500 to-pink-500",
       description: "SEO-optimized content generation using AI",
@@ -36,14 +40,6 @@ export default function AllProjects() {
       description: "Real-time cryptocurrency monitoring dashboard",
     },
     {
-      title: "Task Manager Pro",
-      category: "Web Apps",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-      slug: "task-manager-pro",
-      color: "from-orange-500 to-yellow-500",
-      description: "Construction and site work management system",
-    },
-    {
       title: "GHL Funnel Booster",
       category: "Automation",
       image: "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -54,58 +50,18 @@ export default function AllProjects() {
     {
       title: "EduLearn LMS",
       category: "Web Apps",
-      image: "https://images.pexels.com/photos/414518/pexels-photo-414518.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: lms,
       slug: "edulearn-lms",
       color: "from-indigo-500 to-blue-500",
       description: "Complete Learning Management System",
     },
     {
-      title: "E-Commerce Platform",
-      category: "Websites",
-      image: "https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg?auto=compress&cs=tinysrgb&w=800",
-      slug: "ecommerce-platform",
-      color: "from-rose-500 to-orange-500",
-      description: "Full-featured online shopping platform",
-    },
-    {
-      title: "AI Chatbot Suite",
-      category: "AI",
-      image: "https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=800",
-      slug: "ai-chatbot-suite",
-      color: "from-cyan-500 to-blue-600",
-      description: "Intelligent customer support chatbot system",
-    },
-    {
-      title: "Fitness Tracker App",
-      category: "Mobile Apps",
-      image: "https://images.pexels.com/photos/3808517/pexels-photo-3808517.jpeg?auto=compress&cs=tinysrgb&w=800",
-      slug: "fitness-tracker-app",
-      color: "from-lime-500 to-green-500",
-      description: "Mobile fitness tracking and workout app",
-    },
-    {
       title: "Unique Engineering",
       category: "Website",
-      image: "https://images.pexels.com/photos/3945651/pexels-photo-3945651.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image:un,
       slug: "unique-engineering",
       color: "from-pink-500 to-rose-500",
       description: "Engineering for a Sustainable Future",
-    },
-    {
-      title: "Workflow Automation Engine",
-      category: "Automation",
-      image: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800",
-      slug: "workflow-automation",
-      color: "from-violet-500 to-purple-500",
-      description: "Business process automation tool",
-    },
-    {
-      title: "Real Estate Portal",
-      category: "Websites",
-      image: "https://images.pexels.com/photos/3729557/pexels-photo-3729557.jpeg?auto=compress&cs=tinysrgb&w=800",
-      slug: "real-estate-portal",
-      color: "from-amber-500 to-orange-500",
-      description: "Property listing and management system",
     },
   ];
 

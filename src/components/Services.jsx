@@ -12,7 +12,9 @@ import {
   Target
 } from "lucide-react";
 import useScrollAnimation from "../hooks/useScrollAnimation";
-
+import seo from "../assets/seo.jpg"
+import software from "../assets/software.jpg"
+import ai from "../assets/ai.jpg"
 export default function Services() {
   const navigate = useNavigate();
   const [ref, isVisible] = useScrollAnimation({ once: true });
@@ -122,7 +124,7 @@ export default function Services() {
         <div className="space-y-12">
           {/* Service 1: Web Development */}
           <FeaturedServiceRow
-            image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80"
+            image={software}
             title="Software & App Development"
             description="We build secure, scalable, and high-performance web applications tailored to your business needs using cutting-edge technologies like React, Next.js, Node.js, and more."
             features={[
@@ -137,7 +139,7 @@ export default function Services() {
 
           {/* Service 2: AI Automation */}
           <FeaturedServiceRow
-            image="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80"
+            image={ai}
             title="AI Automation"
             description="Automate repetitive tasks and streamline your business workflows with intelligent AI systems and automation solutions designed for scale."
             features={[
@@ -152,7 +154,7 @@ export default function Services() {
 
           {/* Service 3: Digital Marketing */}
           <FeaturedServiceRow
-            image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"
+            image={seo}  
             title="Digital Marketing & SEO"
             description="Achieve higher rankings, drive organic growth, and build your brand with our comprehensive SEO and digital marketing strategies."
             features={[

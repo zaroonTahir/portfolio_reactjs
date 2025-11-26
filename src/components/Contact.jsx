@@ -58,7 +58,7 @@ export default function Contact() {
           className="w-8 h-5 object-cover rounded-sm border border-slate-700"
           alt="Qatar Flag"
         />
-        Doha, Qatar
+       Transworld Tower 1, Doha, Qatar
       </span>,
     ],
   },
@@ -66,7 +66,7 @@ export default function Contact() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      lines: ["+971 50 276 9285"],
+      lines: ["+971 50 276 9285","+923216716065"],
     },
 
     {

@@ -198,6 +198,26 @@ export default function Navbar() {
           }
         }
 
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes rotate {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(90deg);
+          }
+        }
+
         .animate-fade-in-left {
           animation: fadeInLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
@@ -209,6 +229,15 @@ export default function Navbar() {
         .animate-fade-in-down {
           animation: fadeInDown 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
           opacity: 0;
+        }
+
+        .animate-slide-in-left {
+          animation: slideInLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          opacity: 0;
+        }
+
+        .animate-rotate {
+          animation: rotate 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
       `}</style>
     </nav>

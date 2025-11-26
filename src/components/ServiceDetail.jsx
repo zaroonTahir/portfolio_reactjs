@@ -19,6 +19,9 @@ import {
 } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import ai2 from "../assets/ai2.jpg"
+import seo2 from "../assets/seo2.webp"
+import ghl2 from "../assets/ghl2.webp"
 
 export default function ServiceDetail() {
   const { serviceSlug } = useParams();
@@ -178,7 +181,7 @@ export default function ServiceDetail() {
       description:
         "We leverage artificial intelligence to automate repetitive tasks, streamline operations, and improve overall business efficiency. Our AI solutions help you reduce manual workload and scale faster.",
       heroImage:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80",
+       ai2,
       features: [
         "AI Chatbot Development (Customer support, lead qualification)",
         "Workflow Automations (Zapier, Make, n8n)",
@@ -250,7 +253,7 @@ export default function ServiceDetail() {
       description:
         "We help businesses grow through targeted marketing strategies and high-performance SEO campaigns. Our goal is to increase visibility, generate leads, and maximize ROI.",
       heroImage:
-        "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=1200&q=80",
+        seo2,
       features: [
         "Search Engine Optimisation (SEO)",
         "Technical SEO & Audits",
@@ -469,7 +472,7 @@ export default function ServiceDetail() {
       description:
         "We help businesses unlock the full potential of GoHighLevel by building advanced automations, pipelines, and integrated systems that boost conversions and streamline operations.",
       heroImage:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+        ghl2,
       features: [
         "GHL CRM Setup & Optimisation",
         "Funnel & Pipeline Creation",

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import useScrollAnimation from "../hooks/useScrollAnimation";
+import fixit from "../assets/fixit.jpg"
+import blog from "../assets/aiblog.png"
+import un from "../assets/un.png"
+import lms from "../assets/lms.jpg"
 
 export default function Portfolio() {
   const navigate = useNavigate();
@@ -14,14 +18,14 @@ export default function Portfolio() {
     {
       title: "FixIt App",
       category: "Mobile Apps",
-      image: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: fixit,
       slug: "fixit-app",
       color: "from-blue-500 to-cyan-500",
     },
     {
       title: "AI Blog Generator",
       category: "AI",
-      image: "https://images.pexels.com/photos/5473951/pexels-photo-5473951.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: blog ,
       slug: "ai-blog-generator",
       color: "from-purple-500 to-pink-500",
     },
@@ -33,10 +37,10 @@ export default function Portfolio() {
       color: "from-green-500 to-teal-500",
     },
     {
-      title: "Task Manager Pro",
-      category: "Web Apps",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-      slug: "task-manager-pro",
+      title: "Unique Engineering",
+      category: "Website",
+      image: un,
+      slug: "unique-engineering",
       color: "from-orange-500 to-yellow-500",
     },
     {
@@ -49,7 +53,7 @@ export default function Portfolio() {
     {
       title: "EduLearn LMS",
       category: "Web Apps",
-      image: "https://images.pexels.com/photos/414518/pexels-photo-414518.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: lms,
       slug: "edulearn-lms",
       color: "from-indigo-500 to-blue-500",
     },
